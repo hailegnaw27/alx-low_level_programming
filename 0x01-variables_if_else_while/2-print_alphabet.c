@@ -4,9 +4,11 @@
 *
 * Return: Always 0 (Success)
 */
-int main() {
+in:wq
+t main(void)
+{
 char letter = 'a';
-do 
+do
 {
 putchar(letter);
 letter++;
