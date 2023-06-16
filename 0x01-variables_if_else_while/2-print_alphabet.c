@@ -4,8 +4,7 @@
 *
 * Return: Always 0 (Success)
 */
-in:wq
-t main(void)
+int main(void)
 {
 char letter = 'a';
 do
