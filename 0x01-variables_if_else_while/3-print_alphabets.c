@@ -5,15 +5,18 @@
 */
 int main(void)
 {
-char letter;
-for (letter = 'a'; letter <= 'z'; letter++)
-{
-putchar(letter);
-}
-for (letter = 'A'; letter <= 'Z'; letter++}
-{
-putchar(letter);
-}
-putchar('\n');
+char letter = 'a';
+    while (letter <= 'z')
+    {
+        putchar(letter);
+        letter++;
+    }
+    letter = 'A';
+    while (letter <= 'Z')
+    {
+        putchar(letter);
+        letter++;
+    }
+    putchar('\n');
 return (0);
 }
