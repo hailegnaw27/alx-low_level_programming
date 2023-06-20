@@ -8,9 +8,11 @@
 */
 int print_last_digit(int n)
 {
-int last_digit = n % 10;
-char c = last_digit + '0';
-_putchar(c);
+int last_digit;
+if (n < 10)
+n = -n;
+last_digit = n % 10;
+_putcha(last_digit + '0);
 return (last_digit);
 }
 
