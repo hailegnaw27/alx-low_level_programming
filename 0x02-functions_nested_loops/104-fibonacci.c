@@ -1,23 +1,21 @@
+#include "main.h"
+/**
+* main - Entry point
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-int a = 1, b = 2, c, i;
+int i;
+unsigned long int j = 1, k = 2, next_num;
 
-_putchar('1');
-_putchar(',');
-_putchar(' ');
-_putchar('2');
-
-for (i = 3; i <= 98; i++)
+printf("%lu, %lu", j, k);
+for (i = 0; i < 96; i++)
 {
-c = a + b;
-_putchar(',');
-_putchar(' ');
-printf("%d", c);
-a = b;
-b = c;
+next_num = j + k;
+printf(", %lu", next_num);
+j = k;
+k = next_num;
 }
-
-_putchar('\n');
-
+printf("\n");
 return (0);
 }
