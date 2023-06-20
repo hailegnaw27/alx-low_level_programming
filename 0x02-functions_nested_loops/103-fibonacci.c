@@ -1,48 +1,30 @@
 #include "main.h"
 
 /**
-* fibonacci - Generates the Fibonacci sequence
-* @n: The maximum value of the sequence
-*
-* Return: A pointer to the head of the sequence
-*/
-int *fibonacci(int n)
-{
-static int sequence[100];
-int i;
-
-sequence[0] = 1;
-sequence[1] = 2;
-
-for (i = 2; i < 100; i++)
-{
-sequence[i] = sequence[i - 1] + sequence[i - 2];
-if (sequence[i] > n)
-break;
-}
-
-return (sequence);
-}
-
-/**
-* main - Entry point
+* main - Entry point, prints the sum of the even-valued terms in the Fibonacci sequence that do not exceed 4,000,000
 *
 * Return: Always 0
 */
 int main(void)
 {
-int *seq, i, sum;
+int first_term = 1, second_term = 2, next_term, sum = 2;
 
-seq = fibonacci(4000000);
-sum = 0;
+while (second_term <= 4000000) {
+next_term = first_term + second_term;
+first_term = second_term;
+second_term = next_term;
 
-for (i = 0; seq[i] != 0; i++)
-{
-if (seq[i] % 2 == 0)
-sum += seq[i];
+if (second_term % 2 == 0) {
+sum += second_term;
+}
 }
 
-_putchar(sum / 10 + '0');
+_putchar(sum / 1000000 + '0');
+_putchar((sum / 100000) % 10 + '0');
+_putchar((sum / 10000) % 10 + '0');
+_putchar((sum / 1000) % 10 + '0');
+_putchar((sum / 100) % 10 + '0');
+_putchar((sum / 10) % 10 + '0');
 _putchar(sum % 10 + '0');
 _putchar('\n');
 
