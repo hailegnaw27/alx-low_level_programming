@@ -13,10 +13,14 @@ printf("%lu, %lu", j, k);
 for (i = 0; i < 96; i++)
 {
 next_num = j + k;
+if (i % 10 == 0)
+printf("\n");
+if (i == 95)
+printf(", %lu\n", next_num);
+else
 printf(", %lu", next_num);
 j = k;
 k = next_num;
 }
-printf("\n");
 return (0);
 }
