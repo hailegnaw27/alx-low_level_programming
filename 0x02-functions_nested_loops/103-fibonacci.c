@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* main - Entry point, prints the sum of the even-valued terms in the Fibonacci sequence that do not exceed 4,000,000
+* main - Entry point.
 *
 * Return: Always 0
 */
@@ -9,14 +9,15 @@ int main(void)
 {
 int first_term = 1, second_term = 2, next_term, sum = 2;
 
-while (second_term <= 4000000) {
+while (second_term <= 4000000)
+{
 next_term = first_term + second_term;
 first_term = second_term;
 second_term = next_term;
 
-if (second_term % 2 == 0) {
+if (second_term % 2 == 0)
+
 sum += second_term;
-}
 }
 
 _putchar(sum / 1000000 + '0');
