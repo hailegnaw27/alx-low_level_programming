@@ -1,26 +1,34 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
-* main - Entry point
-* Return: Always 0 (Success)
+* main - Prints the first 90 Fibonacci numbers
+*
+* Return: Always 0
 */
 int main(void)
 {
 int i;
-unsigned long int j = 1, k = 2, next_num;
+long int a = 0, b = 1, c;
 
-printf("%lu, %lu", j, k);
-for (i = 0; i < 96; i++)
+for (i = 0; i < 90; i++)
 {
-next_num = j + k;
-if (i % 10 == 8)
-printf("%lu,\n", next_num);
-if (i == 95)
-printf(", %lu\n", next_num);
+if (i < 2)
+c = i;
 else
-printf(", %lu", next_num);
-j = k;
-k = next_num;
+{
+c = a + b;
+a = b;
+b = c;
 }
+
+printf("%ld", c);
+
+if (i < 89)
+printf(", ");
+}
+
+printf("\n");
+
 return (0);
 }
