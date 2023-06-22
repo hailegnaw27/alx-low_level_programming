@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
 * main - Entry point
@@ -11,18 +10,8 @@
 
 int main(void)
 {
-int zero = 0;
-
-positive_or_negative(zero);
-
-if (zero == 0)
-{
-printf("0 is zero\n");
-}
-else
-{
-printf("Test failed\n");
-}
-
+int i;
+i=0;
+positive_or_negative(i);
 return (0);
 }
