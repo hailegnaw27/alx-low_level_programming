@@ -2,10 +2,11 @@
 #include <stdio.h>
 
 /**
-* fizz_buzz - prints the numbers from 1 to 100,  multiples of 3 with "Fizz",
-* multiples of 5 with "Buzz", and multiples of both 3 and 5 with "FizzBuzz"
+* main - Entry point
+*
+* Return: Always 0 (Success)
 */
-void fizz_buzz(void)
+int main(void)
 {
 int i;
 
@@ -21,4 +22,5 @@ else
 printf("%d ", i);
 }
 printf("\n");
+return (0);
 }
