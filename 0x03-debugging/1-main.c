@@ -7,6 +7,7 @@
 
 int main(void)
 {
+
 int i;
 /* Counter variable for the loop */
 printf("Infinite loop incoming :(\n");
@@ -24,4 +25,5 @@ printf("Infinite loop avoided! \\o/\n");
 /* Print a message indicating that the loop has been avoided*/
 
 return (0);
+
 }
