@@ -1,13 +1,15 @@
 #include <stdio.h>
+
 /**
 * main - causes an infinite loop
 * Return: 0
+*\\o/\n - Print a message indicating Infinite loop avoided
+* int i; - Counter variable for the loop
 */
 
 int main(void)
 {
 int i;
-/* Counter variable for the loop */
 
 printf("Infinite loop incoming :(\n");
 i = 0;
@@ -19,6 +21,6 @@ i = 0;
 *}
 */
 printf("Infinite loop avoided! \\o/\n");
-/* Print a message indicating Infinite loop avoided */
+
 return (0);
 }
