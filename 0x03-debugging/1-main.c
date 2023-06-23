@@ -1,22 +1,23 @@
 #include <stdio.h>
 
 /**
-* main - Entry point of the program
-*
-* Description: This program demonstrates how to avoid an infinite loop
-* Return: Always 0 (Success)
+* main - causes an infinite loop
+* Return: 0
+*\\o/\n - Print a message indicating Infinite loop avoided
+* int i; - Counter variable for the loop
 */
+
 int main(void)
 {
 int i;
 
 printf("Infinite loop incoming :(\n");
-
 i = 0;
 /**
-*while (i < 10)
+*This loop will cause an infinite loop
+* while (i < 10)
 *{
-*  putchar(i);
+*        putchar(i);
 *}
 */
 printf("Infinite loop avoided! \\o/\n");
