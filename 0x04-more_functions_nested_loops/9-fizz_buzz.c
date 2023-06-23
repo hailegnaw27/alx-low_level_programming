@@ -12,7 +12,7 @@
 * Return: Always 0 (Success)
 */
 
-int main(void)
+void fizzBuzz(void);
 {
 int i;
 
@@ -38,5 +38,5 @@ printf("%d ", i);
 
 printf("\n");
 
-return (0);
+return (void);
 }
