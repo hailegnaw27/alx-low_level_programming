@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
 
 /**
  * main - Generates a random password for 101-crackme
@@ -13,7 +12,6 @@ int main(void)
     int i;
     char password[16];
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    char command[50];
 
     srand(time(NULL));
 
@@ -23,9 +21,7 @@ int main(void)
 
     password[15] = '\0';
 
-    sprintf(command, "./101-crackme \"%s\"", password);
-
-    system(command);
+    printf("%s", password);
 
     return (0);
 }
