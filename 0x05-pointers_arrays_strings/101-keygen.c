@@ -1,23 +1,28 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * print_chessboard - prints a chessboard
- * @a: the chessboard to print
+ * main - Generates a random password
  *
- * Return: void
+ * Return: Always 0 (Success)
  */
-void print_chessboard(char (*a)[8])
+int main(void)
 {
-    int row, col;
+    int i;
+    char password[11];
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}:\"<>?,./;'[]\\-=`~";
 
-    for (row = 0; row < 8; row++)
-    {
-        for (col = 0; col < 8; col++)
-        {
-            putchar(a[row][col]);
-            if (col == 7)
-                putchar('\n');
-        }
+    srand(time(NULL));
+
+    for (i = 0; i < 10; i++) {
+        password[i] = charset[rand() % sizeof(charset)];
     }
+
+    password[10] = '\0';
+
+    printf("Random Password: %s\n", password);
+
+    return (0);
 }
 
