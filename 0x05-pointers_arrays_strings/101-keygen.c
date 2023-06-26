@@ -3,25 +3,25 @@
 #include <time.h>
 
 /**
- * main - Generates a random password
+ * main - Generates a random password for 101-crackme
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
     int i;
-    char password[11];
-    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}:\"<>?,./;'[]\\-=`~";
+    char password[16];
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     srand(time(NULL));
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 15; i++) {
         password[i] = charset[rand() % sizeof(charset)];
     }
 
-    password[10] = '\0';
+    password[15] = '\0';
 
-    printf("Random Password: %s\n", password);
+    printf("%s", password);
 
     return (0);
 }
