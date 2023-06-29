@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 /**
 * cap_string - Capitalizes all words of a string
 * @str: The string to capitalize
