@@ -26,6 +26,6 @@ if (accept[j] == '\0')
 break;
 }
 
-return count;
+return (count);
 }
 
