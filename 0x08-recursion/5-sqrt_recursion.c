@@ -10,11 +10,11 @@
 int sqrt_recursive(int n, int guess)
 {
 if (guess * guess == n)
-return guess;
+return (guess);
 else if (guess * guess > n)
 return (-1);
 else
-return( sqrt_recursive(n, guess + 1));
+return (sqrt_recursive(n, guess + 1));
 }
 
 /**
