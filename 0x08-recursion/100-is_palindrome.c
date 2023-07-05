@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdbool.h>
 
 /**
 * is_palindrome - Checks if a string is a palindrome
@@ -9,11 +10,10 @@
 */
 int is_palindrome(char *s)
 {
-int len = 0;
-
 if (s == NULL)
 return (0);
 
+int len = 0;
 while (s[len] != '\0')
 len++;
 
@@ -21,8 +21,7 @@ return (check_palindrome(s, 0, len - 1));
 }
 
 /**
-* check_palindrome - Recursive helper function to
-* check if a string is a palindrome
+* check_palindrome - Recursive helper function to check if a string is a palindrome
 * @s: The string to check
 * @start: The starting index
 * @end: The ending index
