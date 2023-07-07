@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -10,9 +9,23 @@
  */
 int main(int argc, char *argv[])
 {
-/* Print the name of the program */
-printf("%s\n", argv[0]);
+    /* Print the name of the program */
+    print_name(argv[0]);
 
-return (0);
+    return 0;
+}
+
+/**
+ * print_name - Prints the name of the program
+ * @name: The name of the program
+ */
+void print_name(char *name)
+{
+    while (*name)
+    {
+        _putchar(*name);
+        name++;
+    }
+    _putchar('\n');
 }
 
