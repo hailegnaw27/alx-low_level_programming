@@ -45,6 +45,6 @@ k++;
 str[k] = '\n';
 k++;
 }
-
+str[k] = '\0';
 return (str);
 }
