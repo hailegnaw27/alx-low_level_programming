@@ -9,5 +9,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _putchar(char c);
 int is_positive_number(const char* str);
 int main(int argc, char* argv[]);
+int validate_arguments(int argc, char *argv[]);
 #endif /* MAIN_H */
 
