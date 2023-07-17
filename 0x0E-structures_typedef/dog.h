@@ -1,7 +1,13 @@
 #ifndef DOG_H
 #define DOG_H
-
-/* Structure definition */
+/**
+* struct dog - Structure representing a dog
+* @name: Name of the dog
+* @age: Age of the dog
+* @owner: Owner of the dog
+*
+* Description: Structure representing a dog with its name, age, and owner.
+*/
 typedef struct dog
 {
 char *name;
