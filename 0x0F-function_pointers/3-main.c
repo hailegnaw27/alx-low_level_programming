@@ -4,43 +4,42 @@
 
 /**
  * main - Entry point
- * @argc: The number of command line arguments
- * @argv: An array of command line argument strings
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line arguments
  *
  * Return: 0 on success, 98 on wrong number of arguments,
- * 99 on invalid operator, 100 on division/modulo by 0
+ *         99 on invalid operator, 100 on division/modulo by zero
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
-	int (*op_func)(int, int);
+    int num1, num2, result;
+    char *operator;
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+    if (argc != 4)
+    {
+        printf("Error\n");
+        return (98);
+    }
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
+    num1 = atoi(argv[1]);
+    operator = argv[2];
+    num2 = atoi(argv[3]);
 
-	op_func = get_op_func(argv[2]);
+    if (num2 == 0 && (*operator == '/' || *operator == '%'))
+    {
+        printf("Error\n");
+        return (100);
+    }
 
-	if (op_func == NULL || argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
+    if (get_op_func(operator) == NULL)
+    {
+        printf("Error\n");
+        return (99);
+    }
 
-	if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
+    result = get_op_func(operator)(num1, num2);
+    printf("%d\n", result);
 
-	result = op_func(num1, num2);
-	printf("%d\n", result);
-
-	return (0);
+    return (0);
 }
 
