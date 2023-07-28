@@ -1,3 +1,4 @@
+#!/bin/bash
 section .data
     hello db 'Hello, Holberton', 0
 
