@@ -1,20 +1,23 @@
 section .data
     hello db "Hello, Holberton", 0
+    format db "%s", 0
 
 section .text
     extern printf
 
-global main
-main:
-    sub rsp, 8
+    global main
+    main:
+        push rbp
+        mov rbp, rsp
 
-    mov rdi, hello
-    xor eax, eax
-    call printf
+        sub rsp, 8     ; Allocate space for two arguments
 
-    add rsp, 8
+        mov rdi, format
+        mov rsi, hello
+        xor eax, eax   ; Clear eax register before calling printf
+        call printf
 
-    mov eax, 0x60
-    xor edi, edi
-    syscall
+        mov eax, 0
+        leave
+        ret
 
