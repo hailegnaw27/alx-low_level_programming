@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdlib.h>
 /**
  * print_listint_safe - Prints a listint_t linked list (handles loops).
  * @head: Pointer to the head of the list.
