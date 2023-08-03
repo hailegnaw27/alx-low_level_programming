@@ -1,24 +1,24 @@
-#include <stdio.h>
-#include "main.h"
-
 /**
-* main - check the code
-*
-* Return: Always 0.
-*/
-int main(void)
+ * binary_to_uint - Converts a binary number to an unsigned int
+ * @b: Pointer to a string of 0 and 1 chars
+ *
+ * Return: The converted number, or 0 if there is an error
+ */
+unsigned int binary_to_uint(const char *b)
 {
-unsigned int n;
+	unsigned int result = 0;
 
-n = binary_to_uint("1");
-printf("%u\n", n);
-n = binary_to_uint("101");
-printf("%u\n", n);
-n = binary_to_uint("1e01");
-printf("%u\n", n);
-n = binary_to_uint("1100010");
-printf("%u\n", n);
-n = binary_to_uint("0000000000000000000110010010");
-printf("%u\n", n);
-return (0);
+	if (b == NULL)
+		return (0);
+
+	while (*b)
+	{
+		if (*b != '0' && *b != '1')
+			return (0);
+		result = (result * 2) + (*b - '0');
+		b++;
+	}
+
+	return (result);
 }
+
