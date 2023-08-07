@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written != bytes_read || bytes_written == -1)
+		if (bytes_written == -1 || bytes_written != bytes_read)
 			error_exit("Error: Can't write to file", 99);
 	}
 
