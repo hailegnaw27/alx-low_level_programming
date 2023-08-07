@@ -100,8 +100,11 @@ void print_version(char *buffer)
  */
 void print_osabi(char *buffer)
 {
+    unsigned char osabi;
+
+    osabi = buffer[7];
     printf("  OS/ABI:                            ");
-    switch (buffer[7])
+    switch (osabi)
     {
         case 0:
             printf("UNIX - System V\n");
@@ -117,7 +120,6 @@ void print_osabi(char *buffer)
             break;
         case 4:
             printf("UNIX - GNU Hurd\n");
-            break;
         case 6:
             printf("UNIX - Solaris\n");
             break;
@@ -137,22 +139,25 @@ void print_osabi(char *buffer)
             printf("Novell - Modesto\n");
             break;
         case 12:
-            printf("Novell - OpenBSD\n");
+            printf("OpenBSD\n");
             break;
         case 13:
-            printf("Open VMS\n");
+            printf("OpenVMS\n");
             break;
         case 14:
-            printf("Hewlett-Packard - Non-Stop Kernel\n");
+            printf("NonStop Kernel\n");
             break;
         case 15:
-            printf("Amiga - AmigaOS\n");
+            printf("AROS\n");
+            break;
+        case 16:
+            printf("Fenix OS\n");
             break;
         default:
-           if (buffer[7] >=64 && buffer[7] <=255)
-                printf("<unknown: %x>\n", buffer[7]);
+           if (osabi >=64 && osabi <=255)
+                printf("<unknown: %x>\n", osabi);
            else
-                printf("<unknown>\n"); 
+                printf("<unknown: %x>\n", osabi);
            break; 
     }
 }
@@ -163,14 +168,19 @@ void print_osabi(char *buffer)
  */
 void print_abiversion(char *buffer)
 {
+    unsigned char abiversion;
+
+    abiversion = buffer[8];
     printf("  ABI Version:                       ");
-    switch (buffer[8])
+    switch (abiversion)
     {
+        case 0:
+            printf("0\n");
         default:
-           if (buffer[8] >=0 && buffer[8] <=255)
-                printf("%d\n", buffer[8]);
-        else
-                printf("<unknown>\n"); 
+           if (abiversion >=0 && abiversion <=255)
+                printf("%d\n", abiversion);
+           else
+                printf("<unknown: %x>\n", abiversion);
            break; 
     }
 }
@@ -264,7 +274,7 @@ int main(int argc, char *argv[])
         exit(98);
     }
 
-    /* check magic bytes */
+    /* check ELF magic bytes */
     if (buffer[0] != 0x7f || buffer[1] != 'E' || buffer[2] != 'L' || buffer[3] != 'F')
     {
         dprintf(STDERR_FILENO, "Error: Not an ELF file - it has the wrong magic bytes at the start\n");
@@ -274,26 +284,17 @@ int main(int argc, char *argv[])
 
     /* print ELF header information */
     printf("ELF Header:\n");
-    
-    print_magic(buffer); /* print magic bytes */
-
-    print_class(buffer); /* print class */
-
-    print_data(buffer); /* print data */
-
-    print_version(buffer); /* print version */
-
-    print_osabi(buffer); /* print OS/ABI */
-
-    print_abiversion(buffer); /* print ABI version */
-
-    print_type(buffer); /* print type */
-
-    print_entry(buffer); /* print entry point address */
+    print_magic(buffer);
+    print_class(buffer);
+    print_data(buffer);
+    print_version(buffer);
+    print_osabi(buffer);
+    print_abiversion(buffer);
+    print_type(buffer);
+    print_entry(buffer);
 
     /* close file */
     close(fd);
-
     return (0);
 }
 
