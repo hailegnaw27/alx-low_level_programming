@@ -14,7 +14,8 @@ int append_text_to_file(const char *filename, char *text_content);
 
 /* File 3-cp.c */
 int cp_file(const char *file_from, const char *file_to);
-
+void print_error(int code, const char *msg);
+int main(int argc, char *argv[]);
 /* Helper function */
 int _putchar(char c);
 
