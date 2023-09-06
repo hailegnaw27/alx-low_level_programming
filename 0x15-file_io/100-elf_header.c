@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	int fd;
 	ssize_t bytes_read;
 	Elf64_Ehdr header;
-	char buffer[BUFFER_SIZE];
+	int i;
 
 	if (argc != 2)
 	{
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 	/* Print the ELF header information */
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 		printf("%02x ", header.e_ident[i]);
 	printf("\n");
 	printf("  Class:                             ");
