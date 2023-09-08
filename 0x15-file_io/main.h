@@ -23,6 +23,9 @@ void print_close_error(int fd);
 int main(int argc, char *argv[]);
 /* Helper function */
 int _putchar(char c);
+/* file 100-elf_header.c */
+
+void print_elf_header(Elf64_Ehdr *header);
+int elf_header(const char *filename);
 
 #endif /* MAIN_H */
-
