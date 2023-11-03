@@ -23,7 +23,7 @@ temp = node;
 node = node->next;
 free(temp->key);
 free(temp->value);
-free(temp)
+free(temp);
 }
 }
 
