@@ -8,38 +8,38 @@
 
 /* STRUCTURES */
 /**
- * struct listint_s - Node of a singly linked list
- *
- * @n: Integer value stored in the node
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- *
- * Description: Structure representing a node in a singly linked list
- */
+* struct listint_s - Node of a singly linked list
+*
+* @n: Integer value stored in the node
+* @index: Index of the node in the list
+* @next: Pointer to the next node
+*
+* Description: Structure representing a node in a singly linked list
+*/
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+int n;
+size_t index;
+struct listint_s *next;
 } listint_t;
 
 /**
- * struct skiplist_s - Node of a singly linked list with an express lane
- *
- * @n: Integer value stored in the node
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- * @express: Pointer to the next node in the express lane
- *
- * Description: Structure representing a node in a singly linked list
- *              with an express lane
- */
+* struct skiplist_s - Node of a singly linked list with an express lane
+*
+* @n: Integer value stored in the node
+* @index: Index of the node in the list
+* @next: Pointer to the next node
+* @express: Pointer to the next node in the express lane
+*
+* Description: Structure representing a node in a singly linked list
+*              with an express lane
+*/
 typedef struct skiplist_s
 {
-    int n;
-    size_t index;
-    struct skiplist_s *next;
-    struct skiplist_s *express;
+int n;
+size_t index;
+struct skiplist_s *next;
+struct skiplist_s *express;
 } skiplist_t;
 
 /* FUNCTION PROTOTYPES */
